@@ -4,12 +4,14 @@ class MoviesController < ApplicationController
     render json: movies.as_json
   end
 
-  def new_movie
+  def create
     Movie.all
     movie = Movie.new(
-      title: "Finding Nemo",
-      year: 2005,
-      plot: "Fishes journey",
+      title: params[:title],
+      year: params[:year],
+      plot: params[:plot],
+      director: params[:director],
+
     )
     movie.save
     render json: movie.as_json
