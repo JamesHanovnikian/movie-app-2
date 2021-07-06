@@ -7,4 +7,12 @@ class Actor < ApplicationRecord
   validates :known_for, presence: true
   # Make it so that a Actor must have an age over 13 to be listed on the site.
   validates :age, numericality: { greater_than: 13 }
+
+  belongs_to :movie
+
+  def movie_plot
+    x = Movie.find_by(id: movie_id)
+    story = x.plot
+    return story
+  end
 end
