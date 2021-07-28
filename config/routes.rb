@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   patch "/actors/:id" => "actors#update"
   delete "/actors/:id" => "actors#destroy"
 
+  #Movie Genre
+
+  post "/movie_genre" => "movie_genres#create"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
